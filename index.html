@@ -432,7 +432,14 @@
             <h2>Request Your Free Chatbot Setup</h2>
             <div class="divider"></div>
             <div class="form-container">
-                <form action="#" method="POST" id="contact-form">
+                <!-- Netlify Forms: submissions go to your Netlify dashboard + email -->
+                <form name="chatbot-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <!-- Hidden field for spam protection -->
+                    <input type="hidden" name="form-name" value="chatbot-request">
+                    <p style="display:none;">
+                        <label>Don't fill this out: <input name="bot-field"></label>
+                    </p>
+
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Your name">
@@ -474,29 +481,6 @@
             </p>
         </div>
     </footer>
-
-    <script>
-        // Simple form handling - replace with your actual form submission logic
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                business: document.getElementById('business').value,
-                website: document.getElementById('website').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value
-            };
-
-            // Log for testing - replace with actual submission
-            console.log('Form submitted:', formData);
-
-            // Show confirmation (replace with actual handling)
-            alert('Thank you! Your request has been received. We\'ll be in touch soon.');
-            this.reset();
-        });
-    </script>
 
 </body>
 </html>
