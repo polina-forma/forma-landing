@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Forma Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent: #F4C430;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --bg-white: #ffffff;
+            --border-light: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-body);
+            background-color: var(--bg-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Thank You Section */
+        .thank-you {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .thank-you h1 {
+            font-size: clamp(28px, 5vw, 38px);
+            margin-bottom: 16px;
+        }
+
+        .checkmark {
+            width: 64px;
+            height: 64px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .checkmark svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--text-dark);
+            stroke-width: 3;
+            fill: none;
+        }
+
+        .thank-you p {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .thank-you p:last-of-type {
+            margin-bottom: 32px;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            transition: border-color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .footer-company {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+            color: var(--text-body);
+        }
+
+        .footer-contact a {
+            color: var(--text-body);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            color: var(--text-dark);
+        }
+
+        .footer-contact span {
+            margin: 0 12px;
+            color: var(--border-light);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="thank-you">
+        <div class="container">
+            <div class="checkmark">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h1>Thank You!</h1>
+            <p>Your request has been received.</p>
+            <p>I'll review your website and be in touch within 1–2 business days to schedule your free chatbot setup.</p>
+            <a href="/" class="btn-secondary">← Back to Home</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-name">Polina Denissova</p>
+            <p class="footer-company">Forma Consulting</p>
+            <p class="footer-contact">
+                <a href="mailto:polina@forma.consulting">polina@forma.consulting</a>
+                <span>|</span>
+                <a href="tel:+14046428669">404-642-8669</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
