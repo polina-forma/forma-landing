@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Website Chatbot for Local Businesses | Forma Consulting</title>
+    <meta name="description" content="Get a free AI chatbot for your local business website. Answer customer questions 24/7, reduce calls and emails, and use your real website content.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent: #F4C430;
+            --accent-hover: #e0b32a;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --bg-white: #ffffff;
+            --bg-light: #f9f9f9;
+            --border-light: #e5e5e5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-body);
+            background-color: var(--bg-white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Sections */
+        section {
+            padding: 48px 0;
+        }
+
+        section h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .divider {
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+            margin-bottom: 48px;
+        }
+
+        /* What It Does */
+        .what-it-does {
+            background-color: var(--bg-light);
+        }
+
+        .what-it-does ul {
+            list-style: none;
+        }
+
+        .what-it-does li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .what-it-does li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* What's Included */
+        .included-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .included-box h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .included-box h3 .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background-color: var(--accent);
+            color: var(--text-dark);
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+
+        .included-box ul {
+            list-style: none;
+        }
+
+        .included-box li {
+            padding: 6px 0;
+            color: var(--text-body);
+        }
+
+        .included-box li::before {
+            content: "✓ ";
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .optional-box li::before {
+            content: "+ ";
+            color: var(--text-muted);
+        }
+
+        .reassurance {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-style: italic;
+            padding-top: 8px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* Who This Is For */
+        .fit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 600px) {
+            .fit-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fit-box h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .fit-box.good h3 {
+            color: #2d7a3d;
+        }
+
+        .fit-box.not h3 {
+            color: var(--text-muted);
+        }
+
+        .fit-box ul {
+            list-style: none;
+        }
+
+        .fit-box li {
+            padding: 5px 0;
+            font-size: 15px;
+        }
+
+        /* Contact Form */
+        .contact {
+            background-color: var(--bg-light);
+        }
+
+        .contact h2 {
+            text-align: center;
+        }
+
+        .contact .divider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-container {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-group label .optional {
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            background-color: var(--bg-white);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.15);
+        }
+
+        .form-group input::placeholder {
+            color: #b0b0b0;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .footer-company {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+            color: var(--text-body);
+        }
+
+        .footer-contact a {
+            color: var(--text-body);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            color: var(--text-dark);
+        }
+
+        .footer-contact span {
+            margin: 0 12px;
+            color: var(--border-light);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Free AI Website Chatbot<br>for Local Businesses</h1>
+            <p class="subtitle">Your website should answer customer questions — even when you can't.</p>
+            <a href="#contact" class="btn-primary">Request Free Chatbot Setup</a>
+        </div>
+    </section>
+
+    <!-- What It Does -->
+    <section class="what-it-does">
+        <div class="container">
+            <h2>What It Actually Does</h2>
+            <div class="divider"></div>
+            <ul>
+                <li>Answer common customer questions 24/7</li>
+                <li>Explain your services clearly</li>
+                <li>Share hours, location, and contact info</li>
+                <li>Reduce repetitive calls and emails</li>
+                <li>Use your real website content (not generic AI answers)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="whats-included">
+        <div class="container">
+            <h2>What's Included</h2>
+            <div class="divider"></div>
+            <div class="included-grid">
+                <div class="included-box">
+                    <h3>Included <span class="tag">Free</span></h3>
+                    <ul>
+                        <li>Basic AI chatbot setup</li>
+                        <li>Trained only on your existing website</li>
+                        <li>Installed and live on your site</li>
+                        <li>Simple testing + short walkthrough</li>
+                    </ul>
+                </div>
+                <div class="included-box optional-box">
+                    <h3>Optional Upgrades</h3>
+                    <ul>
+                        <li>Custom documents or policies</li>
+                        <li>Lead capture or booking</li>
+                        <li>CRM or automation</li>
+                        <li>Advanced training</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="reassurance">The free version works on its own. No obligation to upgrade.</p>
+        </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="who-for">
+        <div class="container">
+            <h2>Who This Is For</h2>
+            <div class="divider"></div>
+            <div class="fit-grid">
+                <div class="fit-box good">
+                    <h3>Good fit if you are a:</h3>
+                    <ul>
+                        <li>Local service business</li>
+                        <li>Contractor or trades professional</li>
+                        <li>Studio, clinic, or practice</li>
+                        <li>Small business with a website</li>
+                    </ul>
+                </div>
+                <div class="fit-box not">
+                    <h3>Not a fit if:</h3>
+                    <ul>
+                        <li>You don't have a website yet</li>
+                        <li>You want custom AI workflows out of the gate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Request Your Free Chatbot Setup</h2>
+            <div class="divider"></div>
+            <div class="form-container">
+                <form action="#" method="POST" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" required placeholder="Your business name">
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website URL</label>
+                        <input type="url" id="website" name="website" required placeholder="https://yourbusiness.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="you@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone <span class="optional">(optional)</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+                    </div>
+                    <div class="submit-container">
+                        <button type="submit" class="btn-primary btn-submit">Request Setup</button>
+                    </div>
+                    <p class="form-note">Limited free setups available.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-name">Polina Denissova</p>
+            <p class="footer-company">Forma Consulting</p>
+            <p class="footer-contact">
+                <a href="mailto:polina@forma.consulting">polina@forma.consulting</a>
+                <span>|</span>
+                <a href="tel:+14046428669">404-642-8669</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form handling - replace with your actual form submission logic
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                business: document.getElementById('business').value,
+                website: document.getElementById('website').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value
+            };
+
+            // Log for testing - replace with actual submission
+            console.log('Form submitted:', formData);
+
+            // Show confirmation (replace with actual handling)
+            alert('Thank you! Your request has been received. We\'ll be in touch soon.');
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
