@@ -3,81 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free AI Website Chatbot for Local Businesses | Forma Consulting</title>
-    <meta name="description" content="Get a free AI chatbot for your local business website. Answer customer questions 24/7, reduce calls and emails, and use your real website content.">
+    <title>Free AI Chatbot for Your Website | Forma Consulting</title>
+    <meta name="description" content="Get a free AI-powered chatbot for your local business website. Answer customer questions 24/7, capture leads, and book appointments — even when you're off the clock.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1f2937;
+            --secondary: #f4c430;
+            --secondary-hover: #e4b825;
+            --accent: #008080;
+            --text-dark: #111111;
+            --text-light: #ffffff;
+            --bg-light: #f9f9f9;
+            --bg-white: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --accent: #F4C430;
-            --accent-hover: #e0b32a;
-            --text-dark: #1a1a1a;
-            --text-body: #4a4a4a;
-            --text-muted: #6b6b6b;
-            --bg-white: #ffffff;
-            --bg-light: #f9f9f9;
-            --border-light: #e5e5e5;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 16px;
             line-height: 1.6;
-            color: var(--text-body);
-            background-color: var(--bg-white);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
         }
 
         h1, h2, h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            color: var(--text-dark);
+            font-family: 'Lexend', sans-serif;
+            font-weight: 600;
             line-height: 1.2;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         /* Hero Section */
-        .hero {
-            padding: 80px 0 60px;
-            text-align: center;
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+            padding: 80px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-white);
         }
 
-        .hero h1 {
-            font-size: clamp(28px, 5vw, 42px);
+        .hero-text {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .logo {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--accent);
             margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .headline {
+            font-family: 'Lexend', sans-serif;
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
             letter-spacing: -0.5px;
         }
 
-        .hero .subtitle {
-            font-size: 18px;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+        .tagline {
+            font-size: 1.125rem;
+            color: #4a5568;
+            margin-bottom: 28px;
+            line-height: 1.7;
         }
 
-        .btn-primary {
+        .cta-button {
             display: inline-block;
-            background-color: var(--accent);
+            background-color: var(--secondary);
             color: var(--text-dark);
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
             font-weight: 600;
             padding: 16px 32px;
             border: none;
@@ -85,401 +102,273 @@
             cursor: pointer;
             text-decoration: none;
             transition: background-color 0.2s ease, transform 0.2s ease;
+            margin-bottom: 32px;
         }
 
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-1px);
+        .cta-button:hover {
+            background-color: var(--secondary-hover);
+            transform: translateY(-2px);
         }
 
-        /* Sections */
-        section {
-            padding: 48px 0;
-        }
-
-        section h2 {
-            font-size: 24px;
-            margin-bottom: 24px;
-        }
-
-        .divider {
-            width: 40px;
-            height: 3px;
-            background-color: var(--accent);
-            margin-bottom: 48px;
-        }
-
-        /* What It Does */
-        .what-it-does {
-            background-color: var(--bg-light);
-        }
-
-        .what-it-does ul {
+        .benefits {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .what-it-does li {
+        .benefits li {
             padding: 10px 0;
             padding-left: 28px;
             position: relative;
+            font-size: 0.95rem;
+            color: #374151;
         }
 
-        .what-it-does li::before {
-            content: "";
+        .benefits li::before {
+            content: "✓";
             position: absolute;
             left: 0;
-            top: 18px;
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent);
-            border-radius: 50%;
-        }
-
-        /* What's Included */
-        .included-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-bottom: 24px;
-        }
-
-        @media (max-width: 600px) {
-            .included-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .included-box h3 {
-            font-size: 18px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .included-box h3 .tag {
-            font-family: 'Inter', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background-color: var(--accent);
-            color: var(--text-dark);
-            padding: 3px 8px;
-            border-radius: 3px;
-        }
-
-        .included-box ul {
-            list-style: none;
-        }
-
-        .included-box li {
-            padding: 6px 0;
-            color: var(--text-body);
-        }
-
-        .included-box li::before {
-            content: "✓ ";
             color: var(--accent);
+            font-weight: 700;
+        }
+
+        .benefits li strong {
+            color: var(--primary);
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 80px 24px;
+        }
+
+        .contact-form-section .container {
+            max-width: 700px;
+        }
+
+        .section-title {
+            font-family: 'Lexend', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             font-weight: 600;
-        }
-
-        .optional-box li::before {
-            content: "+ ";
-            color: var(--text-muted);
-        }
-
-        .reassurance {
-            font-size: 15px;
-            color: var(--text-muted);
-            font-style: italic;
-            padding-top: 8px;
-            border-top: 1px solid var(--border-light);
-        }
-
-        /* Who This Is For */
-        .fit-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-        }
-
-        @media (max-width: 600px) {
-            .fit-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .fit-box h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .fit-box.good h3 {
-            color: #2d7a3d;
-        }
-
-        .fit-box.not h3 {
-            color: var(--text-muted);
-        }
-
-        .fit-box ul {
-            list-style: none;
-        }
-
-        .fit-box li {
-            padding: 5px 0;
-            font-size: 15px;
-        }
-
-        /* Contact Form */
-        .contact {
-            background-color: var(--bg-light);
-        }
-
-        .contact h2 {
+            margin-bottom: 16px;
             text-align: center;
         }
 
-        .contact .divider {
+        .form-description {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+            opacity: 0.9;
+            max-width: 550px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .form-container {
-            max-width: 480px;
-            margin: 0 auto;
-        }
-
-        .form-group {
+        .form-field {
             margin-bottom: 20px;
         }
 
-        .form-group label {
+        .form-field label {
             display: block;
-            font-size: 14px;
+            font-size: 0.9rem;
             font-weight: 500;
-            color: var(--text-dark);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .form-group label .optional {
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        .form-group input {
+        .form-field input {
             width: 100%;
-            padding: 12px 14px;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            border: 1px solid var(--border-light);
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 6px;
-            background-color: var(--bg-white);
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
-        .form-group input:focus {
+        .form-field input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-field input:focus {
             outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.15);
-        }
-
-        .form-group input::placeholder {
-            color: #b0b0b0;
+            border-color: var(--secondary);
+            background-color: rgba(255, 255, 255, 0.15);
         }
 
         .submit-container {
             text-align: center;
-            margin-top: 28px;
+            margin-top: 32px;
         }
 
-        .btn-submit {
-            width: 100%;
-            max-width: 280px;
+        .submit-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--text-dark);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
         }
 
-        .form-note {
+        .submit-button:hover {
+            background-color: var(--secondary-hover);
+            transform: translateY(-2px);
+        }
+
+        .privacy-note {
             text-align: center;
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-top: 16px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.7;
         }
 
         /* Footer */
-        footer {
-            padding: 40px 0;
+        .site-footer {
+            background-color: #111827;
+            color: var(--text-light);
+            padding: 32px 24px;
             text-align: center;
-            border-top: 1px solid var(--border-light);
         }
 
-        .footer-name {
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 4px;
+        .site-footer p {
+            font-size: 0.875rem;
+            opacity: 0.8;
         }
 
-        .footer-company {
-            color: var(--text-muted);
-            margin-bottom: 12px;
-        }
-
-        .footer-contact {
-            font-size: 14px;
-            color: var(--text-body);
-        }
-
-        .footer-contact a {
-            color: var(--text-body);
+        .site-footer a {
+            color: var(--text-light);
             text-decoration: none;
         }
 
-        .footer-contact a:hover {
-            color: var(--text-dark);
+        .site-footer a:hover {
+            color: var(--secondary);
         }
 
-        .footer-contact span {
-            margin: 0 12px;
-            color: var(--border-light);
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 24px;
+                gap: 40px;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .hero-image {
+                order: 0;
+            }
+
+            .benefits {
+                text-align: left;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .contact-form-section {
+                padding: 60px 24px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Free AI Website Chatbot<br>for Local Businesses</h1>
-            <p class="subtitle">Your website should answer customer questions — even when you can't.</p>
-            <a href="#contact" class="btn-primary">Request Free Chatbot Setup</a>
-        </div>
-    </section>
-
-    <!-- What It Does -->
-    <section class="what-it-does">
-        <div class="container">
-            <h2>What It Actually Does</h2>
-            <div class="divider"></div>
-            <ul>
-                <li>Answer common customer questions 24/7</li>
-                <li>Explain your services clearly</li>
-                <li>Share hours, location, and contact info</li>
-                <li>Reduce repetitive calls and emails</li>
-                <li>Use your real website content (not generic AI answers)</li>
+    <section class="hero-section">
+        <div class="hero-text">
+            <h2 class="logo">Forma Consulting</h2>
+            <h1 class="headline">Free AI Chatbot for Your Website</h1>
+            <p class="tagline">
+                Level up your website with a 24/7 AI-powered chatbot that answers customer questions, books appointments, and captures qualified leads — even when you're off the clock.
+            </p>
+            <a href="https://wa.me/14046428669" class="cta-button">Get Your Free AI Chatbot Now</a>
+            <ul class="benefits">
+                <li><strong>24/7 instant answers:</strong> Never miss a lead or inquiry.</li>
+                <li><strong>Tailored training:</strong> We train the chatbot on your existing website content.</li>
+                <li><strong>Free installation:</strong> We install and configure it on your site at no charge.</li>
+                <li><strong>No obligation:</strong> There are no hidden fees or upgrade requirements.</li>
             </ul>
         </div>
-    </section>
-
-    <!-- What's Included -->
-    <section class="whats-included">
-        <div class="container">
-            <h2>What's Included</h2>
-            <div class="divider"></div>
-            <div class="included-grid">
-                <div class="included-box">
-                    <h3>Included <span class="tag">Free</span></h3>
-                    <ul>
-                        <li>Basic AI chatbot setup</li>
-                        <li>Trained only on your existing website</li>
-                        <li>Installed and live on your site</li>
-                        <li>Simple testing + short walkthrough</li>
-                    </ul>
-                </div>
-                <div class="included-box optional-box">
-                    <h3>Optional Upgrades</h3>
-                    <ul>
-                        <li>Custom documents or policies</li>
-                        <li>Lead capture or booking</li>
-                        <li>CRM or automation</li>
-                        <li>Advanced training</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="reassurance">The free version works on its own. No obligation to upgrade.</p>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Person working on laptop">
         </div>
     </section>
 
-    <!-- Who This Is For -->
-    <section class="who-for">
+    <!-- Contact Form Section -->
+    <section id="lead-form" class="contact-form-section">
         <div class="container">
-            <h2>Who This Is For</h2>
-            <div class="divider"></div>
-            <div class="fit-grid">
-                <div class="fit-box good">
-                    <h3>Good fit if you are a:</h3>
-                    <ul>
-                        <li>Local service business</li>
-                        <li>Contractor or trades professional</li>
-                        <li>Studio, clinic, or practice</li>
-                        <li>Small business with a website</li>
-                    </ul>
+            <h2 class="section-title">Request Your Free AI Chatbot Setup</h2>
+            <p class="form-description">
+                We'll build and install a chatbot on your site at no cost. Provide your details below and we'll get in touch within one business day.
+            </p>
+            <form name="free-chatbot-request" method="POST" action="https://formspree.io/f/moqbwwka">
+                <input type="hidden" name="_next" value="https://chatbot.forma.consulting/thank-you">
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" required placeholder="Your name">
                 </div>
-                <div class="fit-box not">
-                    <h3>Not a fit if:</h3>
-                    <ul>
-                        <li>You don't have a website yet</li>
-                        <li>You want custom AI workflows out of the gate</li>
-                    </ul>
+                <div class="form-field">
+                    <label for="businessName">Business Name</label>
+                    <input id="businessName" name="businessName" type="text" required placeholder="Your business name">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Request Your Free Chatbot Setup</h2>
-            <div class="divider"></div>
-            <div class="form-container">
-                <!-- Netlify Forms with custom thank you page -->
-                <form name="chatbot-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
-                    <!-- Hidden field for spam protection -->
-                    <input type="hidden" name="form-name" value="chatbot-request">
-                    <p style="display:none;">
-                        <label>Don't fill this out: <input name="bot-field"></label>
-                    </p>
-
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="business">Business Name</label>
-                        <input type="text" id="business" name="business" required placeholder="Your business name">
-                    </div>
-                    <div class="form-group">
-                        <label for="website">Website URL</label>
-                        <input type="text" id="website" name="website" required placeholder="yourbusiness.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="you@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone <span class="optional">(optional)</span></label>
-                        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
-                    </div>
-                    <div class="submit-container">
-                        <button type="submit" class="btn-primary btn-submit">Request Setup</button>
-                    </div>
-                    <p class="form-note">Limited free setups available.</p>
-                </form>
-            </div>
+                <div class="form-field">
+                    <label for="website">Website URL</label>
+                    <input id="website" name="website" type="text" required placeholder="yourbusiness.com">
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input id="email" name="_replyto" type="email" required placeholder="you@email.com">
+                </div>
+                <div class="form-field">
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555">
+                </div>
+                <div class="submit-container">
+                    <button type="submit" class="submit-button">Submit Request</button>
+                </div>
+                <p class="privacy-note">
+                    We'll only use your details to set up your chatbot. No obligations or upsells.
+                </p>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="footer-name">Polina Denissova</p>
-            <p class="footer-company">Forma Consulting</p>
-            <p class="footer-contact">
-                <a href="mailto:polina@forma.consulting">polina@forma.consulting</a>
-                <span>|</span>
-                <a href="tel:+14046428669">404-642-8669</a>
-            </p>
-        </div>
+    <footer class="site-footer">
+        <p>
+            © 2026 Forma Consulting ·
+            <a href="tel:+14046428669">404-642-8669</a> ·
+            <a href="mailto:polina@forma.consulting">polina@forma.consulting</a>
+        </p>
     </footer>
 
 </body>
