@@ -330,8 +330,12 @@
             <p class="form-description">
                 We'll build and install a chatbot on your site at no cost. Provide your details below and we'll get in touch within one business day.
             </p>
-            <form name="free-chatbot-request" method="POST" action="https://formspree.io/f/moqbwwka">
-                <input type="hidden" name="_next" value="https://chatbot.forma.consulting/thank-you">
+            <!-- Netlify Forms -->
+            <form name="free-chatbot-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+                <input type="hidden" name="form-name" value="free-chatbot-request">
+                <p style="display:none;">
+                    <label>Don't fill this out: <input name="bot-field"></label>
+                </p>
                 <div class="form-field">
                     <label for="name">Name</label>
                     <input id="name" name="name" type="text" required placeholder="Your name">
@@ -346,7 +350,7 @@
                 </div>
                 <div class="form-field">
                     <label for="email">Email</label>
-                    <input id="email" name="_replyto" type="email" required placeholder="you@email.com">
+                    <input id="email" name="email" type="email" required placeholder="you@email.com">
                 </div>
                 <div class="form-field">
                     <label for="phone">Phone</label>
